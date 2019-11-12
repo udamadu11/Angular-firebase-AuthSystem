@@ -1,6 +1,6 @@
 import { Injectable,NgZone } from '@angular/core';
 import { auth } from 'firebase/app';
-import { User } from './user';
+import { User } from 'src/app/shared/user';
 import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/auth';
 @Injectable({
@@ -14,7 +14,7 @@ export class AuthService {
     public afAuth: AngularFireAuth,
     private angularFireAuth: AngularFireAuth
   ) { 
-    this.afAuth.authState.subscribe(user=>{
+    this.afAuth.authState.subscribe(user => {
       this.user = user;
     })
   }
@@ -47,4 +47,4 @@ SignOut() {
 }
 
 } 
-}
+
